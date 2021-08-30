@@ -1,0 +1,52 @@
+{
+  "name": "jest-typescript-starter",
+  "version": "1.0.0",
+  "description": "A starter for a node app with Jest, Typescript, and some other basic configurations",
+  "main": "index.ts",
+  "repository": "https://github.com/charlesdobson/jest-typescript-starter.git",
+  "author": "charlesdobson <charlesdobson92@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint ./src --ext .ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "husky": "^7.0.2",
+    "jest": "^27.1.0",
+    "prettier": "^2.3.2",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./*.{js,ts}": [
+      "npx prettier --write",
+      "yarn run lint"
+    ]
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.(ts)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.json"
+      }
+    }
+  }
+}
