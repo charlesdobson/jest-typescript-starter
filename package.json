@@ -9,7 +9,10 @@
   "private": false,
   "scripts": {
     "build": "tsc",
-    "test": "jest",
+    "serve": "NODE_ENV=development nodemon --exec 'ts-node' src/index.ts",
+    "start": "NODE_ENV=production node dist/index.js",
+    "test": "jest --watchAll",
+    "test:coverage": "jest --coverage",
     "lint": "eslint ./src --ext .ts"
   },
   "devDependencies": {
@@ -21,8 +24,10 @@
     "eslint-plugin-prettier": "4.0.0",
     "husky": "7.0.4",
     "jest": "27.4.2",
+    "nodemon": "^2.0.15",
     "prettier": "2.5.0",
     "ts-jest": "27.0.7",
+    "ts-node": "^10.4.0",
     "typescript": "4.5.2"
   },
   "husky": {
