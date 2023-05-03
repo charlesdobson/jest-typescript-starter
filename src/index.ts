@@ -1,3 +1,5 @@
-export const start = () => console.log("Hello, World!");
+import { NAME } from "./imported";
+
+export const start = () => console.log(`Hello, ${NAME}!`);
 
 start();
