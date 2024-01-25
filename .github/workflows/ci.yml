@@ -15,7 +15,7 @@ jobs:
 
       - name: Cache dependencies
         id: root-node-modules-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: "node_modules"
           key: ${{ runner.os }}-modules-${{ hashFiles('./yarn.lock') }}
